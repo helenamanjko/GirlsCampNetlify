@@ -1,0 +1,13 @@
+.feed {
+    background-color: #E96F93;
+}
+.loginBtn{
+    color: #9b1aa7;
+    font-weight: bold;
+    background-color: #fff;
+    width: 150px;
+    margin-top: 20px;
+}
+#cancel{
+    margin-right: 10px;
+}

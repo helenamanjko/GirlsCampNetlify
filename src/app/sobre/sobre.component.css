@@ -1,0 +1,129 @@
+/*Estilos do texto e logotipo*/
+body {
+    margin: 0 auto;
+    height: auto;
+}
+
+.content {
+    display: flex;
+    margin: 0 auto;
+    padding: 0 !important;
+    width: auto;
+}
+
+.imageSobre { 
+    margin-top: 3rem;
+    margin-left: 3rem;
+    width: 20vw;
+    
+}
+
+.imageSobre img {
+    position: relative;
+    max-width: 420px;
+    
+
+}
+
+.sobreText {
+    width: 100vw;
+    height: 88vh;
+    background-color: #FFC7D8;
+}
+
+.sobreText h1 {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.descricao {
+    margin-left: 12rem;
+    margin-right: 2rem;
+}
+
+.descricao h1 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.descricao p {
+    font-family: 'Roboto', sans-serif;
+}
+
+.circulos {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.circulos img {
+    max-width: 20px;
+    margin: 20px;
+}
+
+/*Estilos dos contatos*/
+
+.bg {
+    background-color: #f286fc;
+  }
+  .jumbotron {
+    margin-left: 7%;
+    padding: 5px;
+  }
+  .bgColor {
+    background-color: #fee9ec7a;
+  }
+  
+  .border {
+    border-color: #f286fc;
+  }
+  
+  .redesSociais li {
+    list-style: none !important;
+  }
+  .redesSociais li a {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .imgSize {
+    height: 200px;
+    width: 200px;
+    border-radius: 40%;
+  }
+  .row {
+    margin-top: 20px;
+  }
+
+  .minText {
+    display: none;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .content {
+      display: none;
+    }
+    .minText {
+      display: block;
+      background-color: #FFC7D8;
+      font-family: 'Roboto', sans-serif;
+      height: 88vh;
+    }
+
+    .minTextTitle {
+      text-align: center;
+    }
+    .minDescrip p {
+      margin-top: 4rem;
+    }
+    .gilson {
+      flex-direction: column-reverse;
+    }
+    .patrick {
+      flex-direction: column-reverse;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+  .minDescrip p {
+    font-size: 12px;
+  }
+}

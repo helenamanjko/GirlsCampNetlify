@@ -1,0 +1,16 @@
+
+
+.redesSociais li{
+    list-style: none !important;
+    
+}
+
+
+.redesSociais li a{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.rodape{
+    background-color: #F286FC;
+}

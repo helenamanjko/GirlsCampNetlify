@@ -1,0 +1,76 @@
+.trending {
+  background-color: #faabc2;
+}
+
+.card-header {
+  background-color: #eeb9c8;
+}
+.card-footer {
+  background-color: #eebac9;
+}
+
+.feed {
+  background-color: #ffebf1;
+}
+
+.containerPerfil {
+  margin-left: 5px;
+  justify-content: end;
+}
+
+.containerPosts {
+  margin-right: 5px;
+}
+
+.marginLeft {
+  margin-left: 10px;
+}
+
+.tamContainer {
+  width: 90vw;
+}
+.fs-16{
+  font-size: 16pt;
+}
+a{
+  cursor: pointer;
+}
+li{
+  list-style: none
+}
+.pesquisa{
+  background-color: #fc618d;
+}
+.label-input {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+.icon{
+  color: #7f8c8d;
+  padding: 0 5px;
+}
+
+
+@media only screen and (max-width: 1140px) {
+  .login {
+    height: auto;
+  }
+
+  .invert {
+    flex-direction: column-reverse;
+  }
+
+  .card-img-top {
+    display: none;
+  }
+
+  .card-body button {
+    max-width: 140px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+
+}

@@ -1,0 +1,61 @@
+<div class="container-fluid bg">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-7 align-items-center login">
+            <div class="mt-3">
+                <img src="../../assets/img/logoescritaproj.png" alt="Logo escrita">
+            </div>
+            <h1 class="text-center mb-3 mt-3"></h1>
+            <div class="loginImage">
+                <img src="../../assets/img/girlssSend.png" alt="Imagem meninas">
+            </div>
+            <div class="form">
+                <label class="label-input" for="nomeCompleto">
+                    <i class="far fa-user icon"></i>
+                    <input [(ngModel)]='user.nome' class="form-control" type="text" name="nome" id="nome" placeholder="Nome completo">
+                </label>
+                
+                <label class="label-input" for="email">
+                    <i class="far fa-envelope icon"></i>
+                    <input [(ngModel)]='user.email' class="form-control" type="email" name="email" id="email" placeholder="Email">
+                </label>
+
+                <label class="label-input" for="usuario">
+                    <i class="far fa-user icon"></i>
+                    <input [(ngModel)]='user.usuario' class="form-control" type="text" name="usuario" id="usuario" placeholder="Usuário">
+                </label>
+                
+
+                <label class="label-input" for="senha">
+                    <i class="fas fa-lock icon"></i>
+                    <input (input)='confirmarSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Senha">
+                </label>
+
+                <label class="label-input" for="confirmarSenha">
+                    <i class="fas fa-lock icon"></i>
+                    <input [(ngModel)]='user.senha' class="form-control" type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Confirme sua senha">
+                </label>
+
+                <label class="label-input-select" for="tipoUsuario">
+                    <i class="fas fa-clipboard-list icon"></i>
+                    <select class="form-select border-white text-secondary" name="tipoUsuario" id="tipoUsuario" (change)='tipoUser($event)' aria-label="Default select example">
+                        <option selected>Selecione tipo de usuário</option>
+                        <option value="normal">Normal</option>
+                        <option value="adm">Administrador</option>
+                        <option value="profissional">Profissional da Saúde</option>
+                    </select>
+                </label>
+
+                <label class="label-input" for="numRegistro">
+                    <i class="far fa-id-card icon"></i>
+                    <input [(ngModel)]='user.numRegistro' class="form-control" type="text" name="numRegistro" id="numRegistro" placeholder="Número de registro">
+                </label>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn loginBtn" routerLink='/login'>Cancelar</button>
+                <button type="submit" class="btn loginBtn" (click)='cadastrar()' >Cadastrar</button>
+            </div>
+
+        </div>
+    </div>
+</div>

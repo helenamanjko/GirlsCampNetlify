@@ -1,0 +1,135 @@
+<div class="d-flex justify-content-center flex-column">
+  <div class="container">
+    <div class="mb-4 mt-4 tamContainer">
+
+      <!-- <div class="row d-flex justify-content-center mt-5 mb-5 pesquisa">
+        <div class="col-md-8">
+            <div class="form-group p-4">
+              <label class="label-input" for="">
+                <i class="fas fa-search icon"></i>
+                <input type="text" class="form-control border-white" id="conteudoPostagem" placeholder="Digite uma palavra chave" [(ngModel)]='palavra' (keyup)='findByConteudoPostagem()'>
+              </label>
+            </div>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+
+  <div class="container mb-4 mr-3">
+    <div class="row invert">
+      <div class="col-xl-8 col-lg-12 feed">
+        <!-- <h2>Posts-Forum</h2> -->
+
+        <div class="card text-center mb-3 mt-3" *ngFor="let postagem of listaPostagem | orderBy: key: reverse">
+          <div class="card-header">by: {{ postagem.usuario.nome }}</div>
+          <div class="card-body">
+            <h5 class="card-title">{{ postagem.tema.nomeTema }}</h5>
+            <p class="card-text">{{ postagem.conteudoPostagem }}</p>
+            <!-- <div *ngIf='postagem.idLogado()'> -->
+            <button [routerLink]="['/postagem-edit', postagem.id]" class="btn btn-outline-dark mr-3">
+              Editar
+            </button>
+
+            <button [routerLink]="['/postagem-delete', postagem.id]" class="btn btn-outline-danger">
+              Apagar
+            </button>
+            <!-- </div> -->
+          </div>
+          <div class="card-footer text-dark">
+            {{ postagem.criadoEm | date: "dd/MM/yyyy" }} às {{ postagem.criadoEm | date: "HH:mm" }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Perfil -->
+      <div class="col-xl-4 col-lg-12 feed">
+        <div class="container mt-4 d-flex justify-content-center">
+          <div class="card">
+            <img class="card-img-top" src="../../assets/img/perfil.jpg" alt="Imagem de perfil" />
+            <div class="card-body">
+              <div class="row" style="text-align: center;">
+                <div class="col-8 d-flex justify-content-end">
+                  <h5 class="card-title m-0 font-weight-bold text-center">Olá, {{nome}}</h5>
+                </div>
+                <div class="col-3">
+                  <li class="nav-item pl-3">
+                    <a [routerLink]="['/user-edit', id]">
+                      <!-- <i class="far fa-edit text-dark fs-16"></i> -->
+                    </a>
+                  </li>
+                </div>
+              </div>
+          
+              <ul class="list-group list-group-flush">
+                <hr />
+                <li class="list-group-item text-muted text-center">
+                  Seja bem-vinda, aqui é um espaço de acolhimento seguro para
+                  você!
+                </li>
+                <li class="list-group-item text-muted text-center mt-3">
+                  A igualdade de gênero não é apenas um direito humano
+                  fundamental, mas a base necessária para a construção de um
+                  mundo sustentável.
+                </li>
+              </ul>
+            </div>
+            <div class="container">
+                <div class="row card-body">
+                  <div class="col-6">
+                    <a href="https://api.whatsapp.com/send?phone=5511995926692&text=%20Precisa de ajuda?" target="_blank">
+                      <button class="btn btn-outline-danger">Emergência</button>
+                    </a>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#novaPostagem">
+                      Publique
+                    </button>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Perfil -->
+
+      <!-- Modal Postagem -->
+      <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="TituloModalCentralizado">
+                Nova postagem
+              </h5>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="texto">Texto</label>
+                <textarea [(ngModel)]="postagem.conteudoPostagem" class="form-control" name="texto" id="texto"
+                  rows="3"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="texto">Escolha um tema: </label>
+                <select class="form-control" name="tema" id="tema" [(ngModel)]="idTema" (change)="findByIdTema()">
+                  <option *ngFor="let item of listaTemas" value="{{ item.id }}">
+                    {{ item.descricao }}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                Cancelar
+              </button>
+              <button type="button" class="btn btn-success" (click)="cadastrar()" data-bs-dismiss="modal">
+                Publicar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

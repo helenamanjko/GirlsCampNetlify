@@ -1,0 +1,30 @@
+.bg {
+  background-color: #f286fc;
+}
+.jumbotron {
+  margin-left: 7%;
+  padding: 5px;
+}
+.bgColor {
+  background-color: #fee9ec7a;
+}
+
+.border {
+  border-color: #f286fc;
+}
+
+.redesSociais li {
+  list-style: none !important;
+}
+.redesSociais li a {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.imgSize {
+  height: 200px;
+  width: 200px;
+  border-radius: 40%;
+}
+.row {
+  margin-top: 20px;
+}
