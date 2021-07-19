@@ -1,13 +1,13 @@
 .feed {
-    background-color: #E96F93;
+  background-color: #f5a0fd;
 }
-.loginBtn{
-    color: #9b1aa7;
-    font-weight: bold;
-    background-color: #fff;
-    width: 150px;
-    margin-top: 20px;
+.loginBtn {
+  color: #9b1aa7;
+  font-weight: bold;
+  background-color: #fff;
+  width: 150px;
+  margin-top: 20px;
 }
-#cancel{
-    margin-right: 10px;
+#cancel {
+  margin-right: 10px;
 }

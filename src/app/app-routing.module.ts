@@ -18,17 +18,16 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent },
 
   { path: 'postagem', component: PostagemComponent },
-  {path: 'postagem-edit/:id', component: PostagemEditComponent},
-  {path: 'postagem-delete/:id', component: PostagemDeleteComponent},
-
+  { path: 'postagem-edit/:id', component: PostagemEditComponent },
+  { path: 'postagem-delete/:id', component: PostagemDeleteComponent },
 
   { path: 'tema', component: TemaComponent },
   { path: 'tema-edit/:id', component: TemaEditComponent },
   { path: 'tema-delete/:id', component: TemaDeleteComponent },
 
-  { path: 'sobre', component: SobreComponent},
+  { path: 'sobre', component: SobreComponent },
 
-  {path: 'user-edit/:id', component: UserEditComponent}
+  { path: 'user-edit/:id', component: UserEditComponent },
 ];
 
 @NgModule({

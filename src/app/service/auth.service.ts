@@ -16,15 +16,23 @@ export class AuthService {
   };
 
   entrar(userLogin: UserLogin): Observable<UserLogin> {
-    return this.http.post<UserLogin>('https://girlscampback.herokuapp.com/usuarios/logar', userLogin);
+    return this.http.post<UserLogin>(
+      'https://girlscampback.herokuapp.com/usuarios/logar',
+      userLogin
+    );
   }
 
   cadastrar(user: User): Observable<User> {
-    return this.http.post<User>('https://girlscampback.herokuapp.com/usuarios/cadastrar', user);
+    return this.http.post<User>(
+      'https://girlscampback.herokuapp.com/usuarios/cadastrar',
+      user
+    );
   }
 
   getByIdUser(id: number): Observable<User> {
-    return this.http.get<User>(`https://girlscampback.herokuapp.com/usuarios/${id}`,this.token);
+    return this.http.get<User>(
+      `https://girlscampback.herokuapp.com/usuarios/${id}`
+    );
   }
 
   logado() {

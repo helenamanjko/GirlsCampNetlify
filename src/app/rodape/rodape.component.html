@@ -1,36 +1,100 @@
-
-  <div class="container-fluid">
+<div class="container-fluid">
   <footer class="row d-flex justify-content-center rodape">
-      <hr/>
+    <hr />
     <div class="container">
-      <div class=" item text-center">
-
-
-      <ul class="redesSociais">
+      <div class="item text-center">
+        <ul class="redesSociais">
           <li>
-              <a href="#" target="_blank">
-                  <img width="50" src="../../assets/img/facebook.png" alt="Logo Facebook"/>
-              </a>
-          
-              <a href="#" target="_blank">
-                  <img width="50" src="../../assets/img/instagram.png" alt="Logo Instagram"/>
-              </a>
-      
-              <a href="#" target="_blank">
-                  <img width="50" src="../../assets/img/BotaoEmail.png" alt="Logo Email"/>
-              </a>
-          </li>
-      </ul>
+            <a href="https://www.facebook.com/girlsacamp" target="_blank">
+              <img
+                width="50"
+                src="../../assets/img/facebook.png"
+                alt="Logo Facebook"
+              />
+            </a>
 
+            <a
+              href="https://www.instagram.com/projetogirlscamp/"
+              target="_blank"
+            >
+              <img
+                width="50"
+                src="../../assets/img/instagram.png"
+                alt="Logo Instagram"
+              />
+            </a>
+
+            <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <img
+                width="50"
+                src="../../assets/img/BotaoEmail.png"
+                alt="Logo Email"
+              />
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
 
     <hr />
-    <p class="text-center">
-      Todos os direitos reservados: Girls Camp &copy;
-    </p>
+    <p class="text-center">Todos os direitos reservados: Girls Camp &copy;</p>
   </footer>
-
+</div>
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">
+          Nos mande um e-mail
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Seu e-mail</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="nome@example.com"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label"
+            >Sua menssagem</label
+          >
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+          ></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-outline-danger"
+          data-bs-dismiss="modal"
+        >
+          Cancelar
+        </button>
+        <button type="button" class="btn btn-outline-dark">Enviar</button>
+      </div>
+    </div>
   </div>
-
- 
+</div>

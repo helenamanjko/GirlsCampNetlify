@@ -1,33 +1,40 @@
 <div class="container-fluid p-0 m-0">
   <nav class="navbar navbar-expand-lg navbar-light">
     <img src="../../assets/img/logoProjeto.png" alt="Logo" />
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"> </span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="container">
         <div class="row">
-          <div class="col-4 d-flex justify-content-start m-0 align-items-center">
+          <div
+            class="col-4 d-flex justify-content-start m-0 align-items-center"
+          >
             <ul class="navbar-nav mr-auto">
-
               <li class="nav-item active">
                 <a class="nav-link" href="#postagem">Inicio</a>
               </li>
-      
+
               <li *ngIf="auth.adm()" class="nav-item active">
                 <a class="nav-link" routerLink="/tema">Tema</a>
               </li>
-      
+
               <li class="nav-item">
                 <a class="nav-link" routerLink="/sobre">Sobre Nós</a>
               </li>
             </ul>
           </div>
-            
-          
-            <!-- Pesquisar -->
+
+          <!-- Pesquisar 
               <div class="col-6 justify-content-center m-0 align-items-center">
                   <div class="form-group">
                     <label class="label-input" for="">
@@ -35,17 +42,25 @@
                       <input type="text" class="form-control border-white" id="conteudoPostagem" placeholder="Digite uma palavra chave" [(ngModel)]='palavra' (keyup)='findByConteudoPostagem()'>
                     </label>
                   </div>
-              </div>
-          
-          <div class="col-2 d-flex justify-content-end sair m-0 align-items-center">
+              </div>-->
+
+          <div
+            class="col-8 d-flex justify-content-end sair m-0 align-items-center"
+          >
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a (click)="sair()" class="m-0 fs-16" style="text-decoration: none;">Sair <i
-                    class="fas fa-sign-out-alt text-dark fs-16 align-items-end"></i></a>
+                <a
+                  (click)="sair()"
+                  class="m-0 fs-16"
+                  style="text-decoration: none"
+                  >Sair
+                  <i
+                    class="fas fa-sign-out-alt text-dark fs-16 align-items-end"
+                  ></i
+                ></a>
               </li>
             </ul>
           </div>
-
         </div>
       </div>
     </div>

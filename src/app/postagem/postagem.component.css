@@ -1,6 +1,9 @@
 .trending {
   background-color: #faabc2;
 }
+.fundo {
+  background-color: white;
+}
 
 .card-header {
   background-color: #eeb9c8;
@@ -29,16 +32,16 @@
 .tamContainer {
   width: 90vw;
 }
-.fs-16{
+.fs-16 {
   font-size: 16pt;
 }
-a{
+a {
   cursor: pointer;
 }
-li{
-  list-style: none
+li {
+  list-style: none;
 }
-.pesquisa{
+.pesquisa {
   background-color: #fc618d;
 }
 .label-input {
@@ -47,11 +50,10 @@ li{
   align-items: center;
   margin: 10px;
 }
-.icon{
+.icon {
   color: #7f8c8d;
   padding: 0 5px;
 }
-
 
 @media only screen and (max-width: 1140px) {
   .login {
@@ -72,5 +74,4 @@ li{
 }
 
 @media only screen and (max-width: 320px) {
-
 }

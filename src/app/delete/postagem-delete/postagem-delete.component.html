@@ -1,37 +1,42 @@
 <div class="container mb-5 mt-5">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-center text-secondary">Apagar postagem</h1>
-        </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center text-secondary">Apagar postagem</h1>
     </div>
+  </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <h4 class="text-center text-secondary">Você certeza que deseja apagar essa postagem?</h4>
-        </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="text-center text-secondary">
+        Você certeza que deseja apagar essa postagem?
+      </h4>
     </div>
+  </div>
 
-    <div class="row d-flex justify-content-center mt-4">
-        <div class="col-md-4">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title m-0">{{postagem.tema.nomeTema}}</h5>
-                    <small class="text-muted ">Tema: {{postagem.tema.descricao}}</small>
-                    <p class="card-text mt-3">{{postagem.conteudoPostagem}}</p>
-                    <p class="card-text"><small class="text-muted">
-                            {{postagem.criadoEm | date: 'dd/MM/yyyy'}} às {{postagem.criadoEm | date: 'HH:mm'}}
-                        </small></p>
-                </div>
-            </div>
+  <div class="row d-flex justify-content-center mt-4">
+    <div class="col-md-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title m-0">{{ postagem.tema.nomeTema }}</h5>
+          <small class="text-muted">Tema: {{ postagem.tema.descricao }}</small>
+          <p class="card-text mt-3">{{ postagem.conteudoPostagem }}</p>
+          <p class="card-text">
+            <small class="text-muted">
+              {{ postagem.criadoEm | date: "dd/MM/yyyy" }} às
+              {{ postagem.criadoEm | date: "HH:mm" }}
+            </small>
+          </p>
         </div>
+      </div>
     </div>
+  </div>
 
-    <div class="row mt-5">
-        <div class="col-md-12 d-flex justify-content-center">
-            <button class="btn btn-danger mr-4" routerLink='/inicio'>Não</button>
-            <button class="btn btn-success" (click)='apagar()'>Sim</button>
-        </div>
-
+  <div class="row mt-5">
+    <div class="col-md-12 d-flex justify-content-center">
+      <button class="btn btn-outline-danger mr-4" routerLink="/postagem">
+        Não
+      </button>
+      <button class="btn btn-outline-dark" (click)="apagar()">Sim</button>
     </div>
-
+  </div>
 </div>

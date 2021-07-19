@@ -41,15 +41,15 @@ import { AlertasComponent } from './alertas/alertas.component';
     UserEditComponent,
     PostagemEditComponent,
     PostagemDeleteComponent,
-    AlertasComponent
+    AlertasComponent,
   ],
   imports: [
-    BrowserModule, 
-    AppRoutingModule, 
-    HttpClientModule, 
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     ModalModule.forRoot(),
-    OrderModule
+    OrderModule,
   ],
   providers: [
     {
