@@ -27,12 +27,12 @@ body {
 
 .sobreText {
     width: 100vw;
-    height: 88vh;
+    height: 62vh;
     background-color: #FFC7D8;
 }
 
 .sobreText h1 {
-    margin-top: 4rem;
+    margin-top: 5rem;
     margin-bottom: 2rem;
     text-align: center;
 }
@@ -105,7 +105,7 @@ body {
       display: block;
       background-color: #FFC7D8;
       font-family: 'Roboto', sans-serif;
-      height: 88vh;
+      height: 40vh;
     }
 
     .minTextTitle {

@@ -6,50 +6,22 @@
   </div>
 
   <div class="container mb-4 mr-3">
-    <ul
-      class="nav nav-tabs d-flex justify-content-start fundo"
-      id="myTab"
-      role="tablist"
-    >
+    <ul class="nav nav-tabs d-flex justify-content-start fundo" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
-        <button
-          class="nav-link active text-secondary"
-          id="home-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#home"
-          type="button"
-          role="tab"
-          aria-controls="home"
-          aria-selected="true"
-        >
+        <button class="nav-link active text-secondary" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+          type="button" role="tab" aria-controls="home" aria-selected="true">
           Feed
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button
-          class="nav-link text-secondary"
-          id="profile-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#profile"
-          type="button"
-          role="tab"
-          aria-controls="profile"
-          aria-selected="false"
-        >
+        <button class="nav-link text-secondary" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+          type="button" role="tab" aria-controls="profile" aria-selected="false">
           Minhas Postagens
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button
-          class="nav-link text-secondary"
-          id="contact-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#contact"
-          type="button"
-          role="tab"
-          aria-controls="contact"
-          aria-selected="false"
-        >
+        <button class="nav-link text-secondary" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
+          type="button" role="tab" aria-controls="contact" aria-selected="false" (click)='getAll()'>
           Meu Usuário
         </button>
       </li>
@@ -59,31 +31,17 @@
         <!----------teste nsv 5-->
 
         <div class="tab-content" id="myTabContent">
-          <div
-            class="tab-pane fade show active"
-            id="home"
-            role="tabpanel"
-            aria-labelledby="home-tab"
-          >
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="col-md-12 justify-content-center">
               <div class="form-group p-2 mt-3 mb-3">
                 <label class="label-input" for="">
                   <i class="fas fa-search icon"></i>
-                  <input
-                    type="text"
-                    class="form-control border-white"
-                    id="conteudoPostagem"
-                    placeholder="Digite uma palavra chave"
-                    [(ngModel)]="palavra"
-                    (keyup)="findByConteudoPostagem()"
-                  />
+                  <input type="text" class="form-control border-white" id="conteudoPostagem"
+                    placeholder="Digite uma palavra chave" [(ngModel)]="palavra" (keyup)="findByConteudoPostagem()" />
                 </label>
               </div>
             </div>
-            <div
-              class="card text-center mb-3 mt-3"
-              *ngFor="let postagem of listaPostagem | orderBy: key:reverse"
-            >
+            <div class="card text-center mb-3 mt-3" *ngFor="let postagem of listaPostagem | orderBy: key:reverse">
               <div class="card-header">by: {{ postagem.usuario.nome }}</div>
               <div class="card-body">
                 <h5 class="card-title">{{ postagem.tema.nomeTema }}</h5>
@@ -97,32 +55,18 @@
 
             <!--------->
           </div>
-          <div
-            class="tab-pane fade"
-            id="profile"
-            role="tabpanel"
-            aria-labelledby="profile-tab"
-          >
-            <div
-              class="card text-center mb-3 mt-3"
-              *ngFor="let postagem of user.postagem | orderBy: key:reverse"
-            >
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="card text-center mb-3 mt-3" *ngFor="let postagem of user.postagem | orderBy: key:reverse">
               <!---<div class="card-header">by: {{ postagem.usuario.nome }}</div>-->
               <div class="card-body">
                 <h5 class="card-title">{{ postagem.tema.nomeTema }}</h5>
                 <p class="card-text">{{ postagem.conteudoPostagem }}</p>
                 <!--<div *ngIf="postagem.idLogado()">-->
-                <button
-                  [routerLink]="['/postagem-edit', postagem.id]"
-                  class="btn btn-outline-dark mr-3"
-                >
+                <button [routerLink]="['/postagem-edit', postagem.id]" class="btn btn-outline-dark espacobotao">
                   Editar
                 </button>
 
-                <button
-                  [routerLink]="['/postagem-delete', postagem.id]"
-                  class="btn btn-outline-danger"
-                >
+                <button [routerLink]="['/postagem-delete', postagem.id]" class="btn btn-outline-danger">
                   Apagar
                 </button>
                 <!---</div>-->
@@ -133,12 +77,7 @@
               </div>
             </div>
           </div>
-          <div
-            class="tab-pane fade"
-            id="contact"
-            role="tabpanel"
-            aria-labelledby="contact-tab"
-          >
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
             <!----user edit----->
             <div class="container mb-5 mt-5">
               <div class="row">
@@ -151,60 +90,31 @@
                 <div class="col-md-10">
                   <div class="form-group">
                     <label for="nome">Nome</label>
-                    <input
-                      [(ngModel)]="user.nome"
-                      class="form-control"
-                      type="text"
-                      name="nome"
-                      id="nome"
-                      placeholder="Seu nome"
-                    />
+                    <input [(ngModel)]="user.nome" class="form-control" type="text" name="nome" id="nome"
+                      placeholder="Seu nome" />
                   </div>
 
                   <div class="form-group">
                     <label for="usuario">Usuário</label>
-                    <input
-                      [(ngModel)]="user.usuario"
-                      class="form-control"
-                      type="text"
-                      name="usuario"
-                      id="usuario"
-                      placeholder="Seu usuário"
-                    />
+                    <input [(ngModel)]="user.usuario" class="form-control" type="text" name="usuario" id="usuario"
+                      placeholder="Seu usuário" />
                   </div>
 
                   <div class="form-group">
                     <label for="senha">Senha</label>
-                    <input
-                      (input)="confirmSenha($event)"
-                      class="form-control"
-                      type="password"
-                      name="senha"
-                      id="senha"
-                      placeholder="Sua senha"
-                    />
+                    <input (input)="confirmSenha($event)" class="form-control" type="password" name="senha" id="senha"
+                      placeholder="Sua senha" />
                   </div>
 
                   <div class="form-group">
                     <label for="confirmSenha">Confirmar senha</label>
-                    <input
-                      [(ngModel)]="user.senha"
-                      class="form-control"
-                      type="password"
-                      name="confirmSenha"
-                      id="confirmSenha"
-                      placeholder="Confirme sua senha"
-                    />
+                    <input [(ngModel)]="user.senha" class="form-control" type="password" name="confirmSenha"
+                      id="confirmSenha" placeholder="Confirme sua senha" />
                   </div>
 
                   <div class="form-group">
                     <label for="tipo">Tipo de usuário</label>
-                    <select
-                      class="form-control"
-                      name="tipo"
-                      id="tipo"
-                      (change)="tipoUser($event)"
-                    >
+                    <select class="form-control" name="tipo" id="tipo" (change)="tipoUser($event)">
                       <option value="">Selecione tipo de usuário</option>
                       <option value="normal">Normal</option>
                       <option value="adm">Administrador</option>
@@ -216,29 +126,15 @@
 
                   <div class="form-group">
                     <label for="numRegistro">Número de Registro</label>
-                    <input
-                      [(ngModel)]="user.numRegistro"
-                      class="form-control"
-                      type="text"
-                      name="confirmSenha"
-                      id="numRegistro"
-                      placeholder="Digite seu número de registro"
-                    />
+                    <input [(ngModel)]="user.numRegistro" class="form-control" type="text" name="confirmSenha"
+                      id="numRegistro" placeholder="Digite seu número de registro" />
                   </div>
 
                   <div class="d-flex justify-content-center">
-                    <button
-                      type="submit"
-                      class="cancel btn btn-outline-danger"
-                      routerLink="/postagem"
-                    >
+                    <button type="submit" class="cancel btn btn-outline-danger espacobotao mt-5" routerLink="/postagem">
                       Cancelar
                     </button>
-                    <button
-                      type="submit"
-                      class="cancel btn btn-outline-dark"
-                      (click)="atualizarUser()"
-                    >
+                    <button type="submit" class="cancel btn btn-outline-dark mt-5" (click)="atualizarUser()">
                       Atualizar
                     </button>
                   </div>
@@ -259,11 +155,7 @@
       <div class="col-xl-4 col-lg-12 feed">
         <div class="container mt-4 d-flex justify-content-center">
           <div class="card">
-            <img
-              class="card-img-top"
-              src="../../assets/img/perfil.jpg"
-              alt="Imagem de perfil"
-            />
+            <img class="card-img-top" src="../../assets/img/perfil.jpg" alt="Imagem de perfil" />
             <div class="card-body">
               <div class="row" style="text-align: center">
                 <div class="col-12 d-flex justify-content-center">
@@ -295,19 +187,12 @@
             </div>
             <div class="container">
               <div class="row card-body justify-content-center mx-0 my-0">
-                <div class="col-12">
-                  <a
-                    href="https://api.whatsapp.com/send?phone=5511995926692&text=%20Precisa de ajuda?"
-                    target="_blank"
-                  >
-                    <button class="btn btn-outline-danger">Emergência</button>
+                <div class="col-12 d-flex justify-content-center">
+                  <a href="https://api.whatsapp.com/send?phone=5511995926692&text=%20Precisa de ajuda?" target="_blank">
+                    <button class="btn btn-outline-danger espacobotao">Emergência</button>
                   </a>
-                  <button
-                    class="btn btn-outline-dark ml-5"
-                    data-bs-toggle="modal"
-                    data-bs-target="#novaPostagem"
-                  >
-                    Publique
+                  <button class="btn btn-outline-dark ml-5" data-bs-toggle="modal" data-bs-target="#novaPostagem">
+                    Publicar
                   </button>
                 </div>
               </div>
@@ -318,14 +203,8 @@
       <!-- /Perfil -->
 
       <!-- Modal Postagem -->
-      <div
-        class="modal fade"
-        id="novaPostagem"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="TituloModalCentralizado"
-        aria-hidden="true"
-      >
+      <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -336,44 +215,24 @@
             <div class="modal-body">
               <div class="form-group">
                 <label for="texto">Texto</label>
-                <textarea
-                  [(ngModel)]="postagem.conteudoPostagem"
-                  class="form-control"
-                  name="texto"
-                  id="texto"
-                  rows="3"
-                ></textarea>
+                <textarea [(ngModel)]="postagem.conteudoPostagem" class="form-control" name="texto" id="texto"
+                  rows="3"></textarea>
               </div>
 
               <div class="form-group">
                 <label for="texto">Escolha um tema: </label>
-                <select
-                  class="form-control"
-                  name="tema"
-                  id="tema"
-                  [(ngModel)]="idTema"
-                  (change)="findByIdTema()"
-                >
+                <select class="form-control" name="tema" id="tema" [(ngModel)]="idTema" (change)="findByIdTema()">
                   <option *ngFor="let item of listaTemas" value="{{ item.id }}">
-                    {{ item.descricao }}
+                    {{ item.nomeTema }}
                   </option>
                 </select>
               </div>
             </div>
             <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-danger"
-                data-bs-dismiss="modal"
-              >
+              <button type="button" class=" espacobotao btn btn-outline-danger" data-bs-dismiss="modal">
                 Cancelar
               </button>
-              <button
-                type="button"
-                class="btn btn-success"
-                (click)="cadastrar()"
-                data-bs-dismiss="modal"
-              >
+              <button type="button" class="btn btn-outline-dark" (click)="cadastrar()" data-bs-dismiss="modal">
                 Publicar
               </button>
             </div>
