@@ -28,6 +28,12 @@ export class AuthService {
       user
     );
   }
+  alterar(user: User): Observable<User> {
+    return this.http.put<User>(
+      'https://girlscampback.herokuapp.com/usuarios/alterar',
+      user, this.token
+    );
+  }
 
   getByIdUser(id: number): Observable<User> {
     return this.http.get<User>(

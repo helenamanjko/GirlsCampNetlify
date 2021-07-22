@@ -123,8 +123,6 @@ export class PostagemComponent implements OnInit {
         console.log(this.idUser);
         this.postagem = new Postagem();
         this.getAll();
-        
-      
       });
   }
 
@@ -173,8 +171,8 @@ export class PostagemComponent implements OnInit {
     if (this.user.senha != this.confirmarSenha) {
       this.alertas.showAlertDanger('As senhas não coincidem!');
     } else {
-      console.log(this.user)
-      this.authService.cadastrar(this.user).subscribe((resp: User) => {
+      console.log(this.user);
+      this.authService.alterar(this.user).subscribe((resp: User) => {
         this.user = resp;
         this.router.navigate(['/postagem']);
         this.alertas.showAlertSuccess(
